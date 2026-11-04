@@ -21,7 +21,7 @@ export default function MovieCard({
                     <Text style={styles.title}>{title}</Text>
                 </View>
                 <Text style={styles.meta}>{year} • {(formatDuration(durationMinutes))}</Text>
-                <Text style={styles.director}>Directed by {director}</Text>
+                <Text style={styles.director}>{director}</Text>
             </View>
         </View>
     );
