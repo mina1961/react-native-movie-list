@@ -7,7 +7,7 @@ export default function MovieList({
 }) {
     console.log('First movie:', movies[0]);
     return (
-        <ScrollView style={styles.content}>
+        <ScrollView contentContainerStyle={styles.content}>
             <View style={styles.header}>
             <Text style={styles.title}>Каталог Филми</Text>
             <Text style={styles.subtitle}>{movies.length} филмa в колекцията</Text>
