@@ -1,5 +1,4 @@
-import { StyleSheet } from 'react-native';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, Pressable, StyleSheet } from 'react-native';
 import { colors } from '../theme';
 import { formatDuration } from '../utils/DateTimeUtil';
 import GenreTags from './GenreTag';
@@ -15,19 +14,21 @@ export default function MovieCard({
 }) {
     console.log('Poster URL:', posterUrl);
     return (
-        <View style={styles.card}>
+        <Pressable style={styles.card} onPress={onSelect}>
             <Image source={{ uri: posterUrl }} style={styles.poster} />
+
             <View style={styles.info}>
                 <View style={styles.titleRow}>
                     <Text style={styles.title}>{title}</Text>
                 </View>
-                <Text style={styles.meta}>{year} • {(formatDuration(durationMinutes))}</Text>
+                <Text style={styles.meta}>{year} • {formatDuration(durationMinutes)}</Text>
                 <Text style={styles.director}>{director}</Text>
+
                 <GenreTags
                     genre={genre}
                 />
             </View>
-        </View>
+        </Pressable>
     );
 }
 

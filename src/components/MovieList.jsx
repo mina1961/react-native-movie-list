@@ -3,7 +3,8 @@ import MovieCard from './MovieCard';
 import { colors } from '../theme';
 
 export default function MovieList({
-    movies
+    movies,
+    onSelect,
 }) {
     console.log('First movie:', movies[0]);
     return (
@@ -13,7 +14,7 @@ export default function MovieList({
             <Text style={styles.subtitle}>{movies.length} филмa в колекцията</Text>
             </View>
             
-            {movies.map(movie => <MovieCard key={movie.id} {...movie} />)}
+            {movies.map(movie => <MovieCard key={movie.id} {...movie} onSelect={() => onSelect(movie)} />)}
         </ScrollView>
     );
 }
