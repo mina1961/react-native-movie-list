@@ -11,7 +11,7 @@ export default function MovieDetails({
     onBack,
 }) {
     return (
-        <View style={styles.content}>
+        <ScrollView contentContainerStyle={styles.content}>
             <View style={styles.topBar}>
                 <Pressable style={styles.backButton} onPress={onBack}>
                     <Text style={styles.backText}>Back</Text>
@@ -35,7 +35,7 @@ export default function MovieDetails({
                 <MovieDetailsRow label="Duration" value={formatDuration(movie.durationMinutes)} />
                 <MovieDetailsRow label="Genre" value={movie.genre} />
             </View>
-        </View>
+        </ScrollView>
     );
 }
 const styles = StyleSheet.create({
